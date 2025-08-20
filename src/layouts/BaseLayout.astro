@@ -1,0 +1,24 @@
+---
+const {pageTitle, children} = Astro.props;
+import '@/styles/global.css';
+import Header from '@/components/header.astro';
+import Footer from '@/components/footer.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Tushar Manna</title>
+
+	</head>
+	<body class="flex flex-col min-h-screen font-display font-normal px-4">
+		<Header/>
+        <main class="flex flex-col flex-1">
+			<slot/>
+		</main>
+        <Footer/>
+	</body>
+</html>
