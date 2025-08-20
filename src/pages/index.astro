@@ -1,8 +1,24 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-
+import {Image} from 'astro:assets';
+import tushar from '@/content/images/tushar.jpg'
 ---
 
 <BaseLayout>
-    <p>this is a test text to see everything is working</p>
+    <Image src={tushar} 
+    alt ="tushar"
+    width={400}
+    height={400}
+    />
+    <div class="text-2xl font bold">
+        <h2>Aspiring Cloud & DevOps Engineer</h2>
+    </div>
+    <ul class="list-disc list-inside space-y-1">
+  <li>Hands-on with Linux, Docker, and CI/CD pipelines</li>
+  <li>Cloud experience with scalable infrastructure</li>
+  <li>Strong problem-solving skills</li>
+  <li>Full-stack development with Go & Node.js</li>
+</ul>
+
+    
 </BaseLayout>
