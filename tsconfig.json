@@ -4,6 +4,7 @@
   "exclude": ["dist"],
   //LEARN  I am using @ based absolute file paths
   "compilerOptions": {
+    "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
       "@/*" : ["src/*"]

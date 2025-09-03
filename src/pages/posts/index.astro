@@ -1,9 +1,21 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro"
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+type Post = CollectionEntry<'posts'>;
+
+const posts: Post[] = await getCollection('posts');
+
 ---
 
 <BaseLayout>
-    <div class="flex flex-1 items-center justify-center">
-        <p>page under construciton</p>
-    </div>
+    {
+        posts.map(post => (
+            <a href={`/posts/${post.slug}`}>
+                <div class="flex justify-between">
+                <div>{post.data.title}</div>
+                <div>{post.data.date.toDateString()}</div>
+            </div>
+            </a>
+        ))
+    }
 </BaseLayout>
