@@ -10,7 +10,7 @@ const posts: Post[] = await getCollection('posts');
 <BaseLayout>
     {
         posts.map(post => (
-            <a href={`/posts/${post.slug}`}>
+            <a href={`/posts/${post.slug}/`}>
                 <div class="flex justify-between">
                 <div>{post.data.title}</div>
                 <div>{post.data.date.toDateString()}</div>
